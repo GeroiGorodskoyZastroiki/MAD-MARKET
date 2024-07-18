@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e9e5b46d7180e6442a105443545526c3
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167903
+  packageName: PlayerPrefs Editor
+  packageVersion: 1.2.2
+  assetPath: Assets/PlayerPrefsEditor/Samples/SampleScene/Unity.PlayerPrefsEditor.Samples.SampleScene.asmdef
+  uploadId: 554724

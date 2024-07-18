@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: da8df9e88c9299a4e82d2ec16f57744b
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167903
+  packageName: PlayerPrefs Editor
+  packageVersion: 1.2.2
+  assetPath: Assets/PlayerPrefsEditor/Editor/Unity.PlayerPrefsEditor.Editor.asmdef
+  uploadId: 554724

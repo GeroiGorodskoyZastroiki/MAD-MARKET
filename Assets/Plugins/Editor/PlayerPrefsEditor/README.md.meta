@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a63f908a3ed620b489d307d5c0343329
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167903
+  packageName: PlayerPrefs Editor
+  packageVersion: 1.2.2
+  assetPath: Assets/PlayerPrefsEditor/README.md
+  uploadId: 554724

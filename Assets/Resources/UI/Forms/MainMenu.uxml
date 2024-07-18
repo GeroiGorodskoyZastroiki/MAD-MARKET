@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/Styles/Menu.uss?fileID=7433441132597879392&amp;guid=4ff79c6fd7d973943a37fc81a3e39ff9&amp;type=3#Menu" />
+    <ui:VisualElement name="Menu" style="flex-grow: 1; width: 25%;">
+        <ui:Button text="Create Lobby" display-tooltip-when-elided="true" name="CreateLobbyButton" class="menu-button" />
+        <ui:Button text="Exit" name="Exit" class="menu-button" />
+    </ui:VisualElement>
+</ui:UXML>

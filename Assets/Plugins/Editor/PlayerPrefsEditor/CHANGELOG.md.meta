@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cccfb6d0d4d0e9a4883fe6b270b354a6
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167903
+  packageName: PlayerPrefs Editor
+  packageVersion: 1.2.2
+  assetPath: Assets/PlayerPrefsEditor/CHANGELOG.md
+  uploadId: 554724

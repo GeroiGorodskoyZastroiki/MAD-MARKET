@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 58a9ccc3d625d2049ba51a04475fed3b
+timeCreated: 1496670894
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167903
+  packageName: PlayerPrefs Editor
+  packageVersion: 1.2.2
+  assetPath: Assets/PlayerPrefsEditor/Editor/Styles.cs
+  uploadId: 554724
