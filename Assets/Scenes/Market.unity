@@ -696,21 +696,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiles:
+  - {fileID: 0}
   - {fileID: 11400000, guid: dc0343d85baec814cac711ca97fadb95, type: 2}
   - {fileID: 11400000, guid: 1ace72370baeeeb40a1f274aced8dfcf, type: 2}
   - {fileID: 11400000, guid: ce2a77515673e16488fdfb1a9333011a, type: 2}
   - {fileID: 11400000, guid: b77a62ac09d00e94b8d71f7dd50f75ae, type: 2}
-  minThirdSize: {x: 5, y: 5}
-  maxThirdSize: {x: 16, y: 16}
-  minPartSize: {x: 4, y: 4}
-  unavailableSpaceSpawnChance: 1
-  unavailableSpaceThirdChance: 0
-  minEmptySpacesCount: 1
-  maxEmptySpacesCount: 3
-  maxEmptySpaceSize: {x: 8, y: 8}
-  maxInRowShelvingsCount: 6
-  minShelvingLength: 3
-  maxShelvingLength: 6
+  - {fileID: 11400000, guid: 1343d7e8348aeb0489ee9a0ab2154a7a, type: 2}
+  - {fileID: 11400000, guid: 494970f8254c66148b28ae586a3a4493, type: 2}
+  thirdSizeMin: {x: 5, y: 5}
+  thirdSizeMax: {x: 10, y: 10}
+  outerEmptySpaceSizeMin: {x: 4, y: 4}
+  outerEmptySpacePartSpawnChance: 1
+  outerEmptySpaceThirdSpawnChance: 0
+  innerEmptySpacesCountMin: 0
+  innerEmptySpacesCountMax: 3
+  innerEmptySpaceSizeMax: {x: 8, y: 8}
+  shelvingsAlongWallsChance: 0.5
+  shelvingsCountInRowMax: 6
+  shelvingLengthMin: 3
+  shelvingLengthMax: 6
+  countersCountMin: 2
 --- !u!1001 &978973420
 PrefabInstance:
   m_ObjectHideFlags: 0
