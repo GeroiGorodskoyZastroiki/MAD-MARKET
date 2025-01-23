@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.community.netcode.transport.websocket": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.websocket",
+    "com.community.netcode.transport.facepunch": "file:C:/Users/Daniil/Desktop/com.community.netcode.transport.facepunch",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.ads": "4.4.2",
@@ -12,6 +12,7 @@
     "com.unity.inputsystem": "1.8.2",
     "com.unity.multiplayer.tools": "2.1.0",
     "com.unity.netcode.gameobjects": "1.9.1",
+    "com.unity.render-pipelines.universal": "15.0.6",
     "com.unity.test-framework": "1.4.4",
     "com.unity.timeline": "1.8.7",
     "com.unity.ugui": "2.0.0",

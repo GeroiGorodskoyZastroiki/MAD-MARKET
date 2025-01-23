@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2743811271905874564
+--- !u!1 &3793874397107161018
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8949055823841950958}
-  - component: {fileID: 3916383044212637789}
-  - component: {fileID: 943695872521566500}
+  - component: {fileID: 8688976945933054162}
+  - component: {fileID: 227141252378826826}
+  - component: {fileID: 3329579607064710519}
+  - component: {fileID: 3951479952855897676}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -18,28 +19,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8949055823841950958
+--- !u!4 &8688976945933054162
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743811271905874564}
+  m_GameObject: {fileID: 3793874397107161018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60.505463, y: -22.618357, z: -2.2337544}
+  m_LocalPosition: {x: 673.7295, y: 308.29346, z: 4.1252313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3916383044212637789
+--- !u!114 &227141252378826826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743811271905874564}
+  m_GameObject: {fileID: 3793874397107161018}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 593a2fe42fa9d37498c96f9a383b6521, type: 3}
@@ -47,11 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NetworkConfig:
     ProtocolVersion: 0
-    NetworkTransport: {fileID: 943695872521566500}
-    PlayerPrefab: {fileID: 6893228051361947072, guid: 0d33f84b095eff944b12acbda5b29b08, type: 3}
+    NetworkTransport: {fileID: 3329579607064710519}
+    PlayerPrefab: {fileID: 0}
     Prefabs:
       NetworkPrefabsLists:
-      - {fileID: 11400000, guid: 9a9b79158a035c1459aa91e9e6d31fbf, type: 2}
+      - {fileID: 11400000, guid: 33205b8b01ac5a4409ef250ef1a53970, type: 2}
     TickRate: 60
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
@@ -65,26 +66,36 @@ MonoBehaviour:
     NetworkIdRecycleDelay: 120
     RpcHashSize: 0
     LoadSceneTimeOut: 120
-    SpawnTimeout: 1
+    SpawnTimeout: 10
     EnableNetworkLogs: 1
     OldPrefabList: []
   RunInBackground: 1
-  LogLevel: 0
---- !u!114 &943695872521566500
+  LogLevel: 1
+--- !u!114 &3329579607064710519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743811271905874564}
+  m_GameObject: {fileID: 3793874397107161018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54618226c9df54608af7731199ed5f0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 44dd247a00edbfa44b77868d755af6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectAddress: 127.0.0.1
-  Path: /netcode
-  Port: 7777
-  SecureConnection: 0
-  AllowForwardedRequest: 0
-  CertificateBase64String: 
+  steamAppId: 480
+  targetSteamId: 0
+  userSteamId: 0
+--- !u!114 &3951479952855897676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793874397107161018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97a6f951770d0c4bb32fcdd1f9bdfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetworkPrefabs: {fileID: 11400000, guid: 33205b8b01ac5a4409ef250ef1a53970, type: 2}

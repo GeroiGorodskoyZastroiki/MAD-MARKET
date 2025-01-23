@@ -306,7 +306,7 @@ public class MapGenerator2 : MonoBehaviour
             {
                 int endRow = startRow;
                 int endCol = startCol;
-                Debug.Log(startRow + " " + startCol);
+                //Debug.Log(startRow + " " + startCol);
 
                 var expressions = new List<Action>
                 {
@@ -319,7 +319,7 @@ public class MapGenerator2 : MonoBehaviour
                 while (expressions.Count > 0)
                 {
                     int index = Random.Range(0, expressions.Count); // Выбираем случайный индекс
-                    Debug.Log(index);
+                    //Debug.Log(index);
                     expressions[index](); // Выполняем выражение
                     expressions.RemoveAt(index); // Удаляем выполненное выражение
                 }

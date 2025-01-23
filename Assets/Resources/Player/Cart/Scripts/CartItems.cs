@@ -36,7 +36,7 @@ public class CartItems : MonoBehaviour
 
     public void PickUp()
     {
-        Ray ray = Cart.Camera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, LayerMask.GetMask("Items"));
         if (hit.collider)
         {
@@ -67,7 +67,7 @@ public class CartItems : MonoBehaviour
     {
         if (!CurrentItem) return;
         Items.Remove(CurrentItem);
-        Vector2 direction = (Cart.Camera.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition) - CurrentItem.transform.position).normalized;
+        Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - CurrentItem.transform.position).normalized;
         CurrentItem.GetComponent<Rigidbody2D>().AddForce(direction * throwForce, ForceMode2D.Impulse);
         CurrentItem = null;
     }
