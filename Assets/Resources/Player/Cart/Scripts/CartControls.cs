@@ -37,8 +37,6 @@ public class CartControls : MonoBehaviour
 
     }
 
-    public void OnFocus(InputAction.CallbackContext context)
-    {
-
-    }
+    public void OnFocus(InputAction.CallbackContext context) =>
+        transform.root.GetComponentInChildren<CameraController>().SetFocused(context.performed);
 }

@@ -10,6 +10,7 @@ public class CartItems : MonoBehaviour
     [SerializeField] private float throwForce;
     [ReadOnly] private sbyte itemsCount = 6;
     [ReadOnly] public List<GameObject> Items;
+    [SerializeField] private Transform itemPointsTransform;
     private List<Transform> itemsPoints;
     [ReadOnly] public GameObject CurrentItem;
     #endregion
@@ -22,7 +23,7 @@ public class CartItems : MonoBehaviour
     {
         Items = new List<GameObject>(itemsCount);
         itemsPoints = new List<Transform>(itemsCount);
-        itemsPoints.AddRange(GetComponentsInChildren<Transform>().Single(x => x.name =="ItemPoints").GetComponentsInChildren<Transform>().Skip(1));
+        itemsPoints.AddRange(itemPointsTransform.GetComponentsInChildren<Transform>().Skip(1));
     }
 
     private void Update() 

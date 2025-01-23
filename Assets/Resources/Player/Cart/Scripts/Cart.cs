@@ -1,4 +1,5 @@
 using Unity.Netcode;
+using Unity.Netcode.Components;
 using UnityEngine;
 
 public class Cart : MonoBehaviour
@@ -25,7 +26,17 @@ public class Cart : MonoBehaviour
 
         Rigidbody = GetComponent<Rigidbody2D>();
 		Rigidbody.centerOfMass = new Vector2(0, 0);
-
-        if (!GetComponentInParent<NetworkObject>().IsOwner) Movement.gameObject.SetActive(false);
 	}
+
+    void Start() 
+    {
+        Rigidbody.isKinematic = false;
+    }
+
+    void Update()
+    {
+        //if (NetworkManager.Singleton.IsHost) return;
+        //Debug.Log(GetComponent<AnticipatedNetworkTransform>().AnticipatedState.Position);
+        //Debug.Log(GetComponent<AnticipatedNetworkTransform>().AuthoritativeState.Position);
+    }
 }

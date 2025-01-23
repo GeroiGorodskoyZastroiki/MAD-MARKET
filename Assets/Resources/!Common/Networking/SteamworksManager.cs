@@ -23,9 +23,9 @@ public class SteamworksManager : MonoBehaviour
 
         _transport = GetComponent<FacepunchTransport>();
 
-        SteamClient.Init(480, true);
-        if (!SteamClient.IsValid)
-            Debug.Log("Steam client not valid");
+        // SteamClient.Init(480, true);
+        // if (!SteamClient.IsValid)
+        //     Debug.Log("Steam client not valid");
     }
 
     private void Start()
@@ -55,10 +55,10 @@ public class SteamworksManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        SteamClient.RunCallbacks();
-    }
+    // void Update()
+    // {
+    //     SteamClient.RunCallbacks();
+    // }
 
     #region NetworkFlow
     public async Task StartHost(int maxMembers)

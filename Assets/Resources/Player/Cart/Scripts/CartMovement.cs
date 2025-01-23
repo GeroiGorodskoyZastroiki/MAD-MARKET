@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using Sirenix.OdinInspector;
 using DG.Tweening;
+using Unity.Netcode.Components;
 
 public class CartMovement : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class CartMovement : MonoBehaviour
     [ReadOnly] public float CurrentSpeed { get => walkSpeed * speedFactor; }
     [ReadOnly] public float CurrentSteerSpeed;
 
-    private float speedFactor = 1f, steerFactor = 1f;
+    [ReadOnly] private float speedFactor = 1f, steerFactor = 1f;
 
     [SerializeField] float walkSpeed, walkSteerSpeed;
 

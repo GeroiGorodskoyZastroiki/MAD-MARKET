@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject PlayerPrefab;
-    public GameObject Player;
+    [HideInInspector] public GameObject Player;
     public static GameManager Instance { get; private set; }
 
     private void Awake()
@@ -15,10 +15,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void SpawnPlayer(bool value)
-    {
+    private void SpawnPlayer(bool value) =>
         Player = Instantiate(PlayerPrefab);
-    }
 
     private async void Start()
     {
@@ -26,6 +24,7 @@ public class GameManager : MonoBehaviour
         NetworkManager.Singleton.OnServerStopped += SpawnPlayer;
 
         //LoadSettings();
+
         await SceneManager.LoadSceneAsync("Market");
         SpawnPlayer(true);
         
