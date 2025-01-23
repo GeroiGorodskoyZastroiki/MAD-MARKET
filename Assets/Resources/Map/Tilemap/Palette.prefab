@@ -265,17 +265,17 @@ Tilemap:
       e33: 1
   m_TileColorArray:
   - m_RefCount: 1
-    m_Data: {r: 0.7625786, g: 0.34883094, b: 0.41531262, a: 1}
+    m_Data: {r: 0.80161315, g: 0.3868262, b: 0.41061527, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.79231244, g: 0.53545606, b: 0.5697533, a: 1}
+    m_Data: {r: 0.7086921, g: 0.2960891, b: 0.30469117, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.87142974, g: 0.38818097, b: 0.4432049, a: 1}
+    m_Data: {r: 0.8094268, g: 0.49842423, b: 0.56838304, a: 1}
   - m_RefCount: 6
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.9541095, g: 0.4902843, b: 0.60629237, a: 1}
+    m_Data: {r: 0.9480217, g: 0.6379138, b: 0.7151755, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.9519975, g: 0.40760648, b: 0.48429048, a: 1}
+    m_Data: {r: 0.8059841, g: 0.3729821, b: 0.5058234, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -317,6 +317,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

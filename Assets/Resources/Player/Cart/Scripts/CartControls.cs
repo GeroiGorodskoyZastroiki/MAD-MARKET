@@ -10,8 +10,8 @@ public class CartControls : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         var value = context.ReadValue<Vector2>();
-        Cart.Movement.SpeedInput = value.y;
-        Cart.Movement.SteeringInput = Cart.Movement.SpeedInput >= 0 ? value.x : -value.x;
+        Cart.Movement.SpeedInput.Value = value.y;
+        Cart.Movement.SteeringInput.Value = Cart.Movement.SpeedInput.Value >= 0 ? value.x : -value.x;
     }
 
     public void OnCharge(InputAction.CallbackContext context)

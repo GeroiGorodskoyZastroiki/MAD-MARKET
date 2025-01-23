@@ -1,8 +1,7 @@
-using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
 
-public class Cart : MonoBehaviour
+public class Cart : MonoBehaviour //
 {
     public CartMovement Movement { get; private set; }
     public CartItems Items { get; private set; }
@@ -31,12 +30,5 @@ public class Cart : MonoBehaviour
     void Start() 
     {
         Rigidbody.isKinematic = false;
-    }
-
-    void Update()
-    {
-        //if (NetworkManager.Singleton.IsHost) return;
-        //Debug.Log(GetComponent<AnticipatedNetworkTransform>().AnticipatedState.Position);
-        //Debug.Log(GetComponent<AnticipatedNetworkTransform>().AuthoritativeState.Position);
     }
 }
