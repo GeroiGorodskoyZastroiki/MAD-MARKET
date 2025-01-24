@@ -636,7 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c976eb3e74d71744b5bf2086ab34e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
   Cart: {fileID: 0}
 --- !u!114 &832230331207638479
 MonoBehaviour:
@@ -653,8 +652,8 @@ MonoBehaviour:
   SpeedInput: 0
   SteeringInput: 0
   CurrentSteerSpeed: 0
-  walkSpeed: 0
-  walkSteerSpeed: 0
+  walkSpeed: 2000
+  walkSteerSpeed: 36000
   chargeSpeedFactor: 4
   chargeSteerFactor: 0.5
   chargeTime: 1.2
@@ -933,7 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743fecf27bd14c94c86735017dc656b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunTime: 1
+  stunTime: 5
   Cart: {fileID: 0}
 --- !u!1 &8020916978406361667
 GameObject:

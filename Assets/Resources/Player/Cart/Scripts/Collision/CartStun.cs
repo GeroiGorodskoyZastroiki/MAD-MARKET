@@ -23,7 +23,6 @@ public class CartStun : MonoBehaviour
 
     public IEnumerator Stun()
     {
-        Debug.Log("stun");
         Cart.Movement.enabled = Cart.Items.enabled = false;
         yield return new WaitForSeconds(stunTime);
         Cart.Movement.enabled = Cart.Items.enabled = true;

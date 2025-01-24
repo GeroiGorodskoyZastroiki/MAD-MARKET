@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class NetworkNotLocalRestrict : MonoBehaviour
+public class NetworkNotOwnedRestrict : MonoBehaviour
 {
     [SerializeField] private List<GameObject> objectsToDeactivate;
     [SerializeField] private List<MonoBehaviour> componentsToDisable;
 
     private void Start()
     {
-        if (!GetComponentInParent<NetworkObject>().IsLocalPlayer)
+        if (!GetComponent<NetworkObject>().IsLocalPlayer)
         {
             foreach (var go in objectsToDeactivate)
                 if (go != null) go.SetActive(false);

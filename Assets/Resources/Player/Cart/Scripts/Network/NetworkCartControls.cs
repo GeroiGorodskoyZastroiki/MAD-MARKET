@@ -1,16 +1,23 @@
 using UnityEngine;
+using Unity.Netcode;
 
-public class NetworkCartControls : MonoBehaviour
+public class NetworkCartControls : NetworkBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    CartControls controls;
+
+    private void Awake() 
     {
-        
+        controls = GetComponent<CartControls>();
+
+        if (NetworkManager.Singleton.IsHost) return;
+
+        controls.OnMoveCallback += MoveRpc;
+        controls.OnChargeCallback += ChargeRpc;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Rpc(SendTo.Server)]
+    public void MoveRpc(Vector2 value) => controls.Move(value);
+
+    [Rpc(SendTo.Server)]
+    public void ChargeRpc() => controls.Charge();
 }

@@ -77,6 +77,7 @@ public class SteamworksManager : MonoBehaviour
     public void LeaveLobby()
     {
         Lobby?.Leave();
+        Lobby = null;
         NetworkManager.Singleton.Shutdown();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
