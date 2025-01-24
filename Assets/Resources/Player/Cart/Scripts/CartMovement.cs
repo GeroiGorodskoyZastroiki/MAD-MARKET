@@ -3,22 +3,18 @@ using System.Collections;
 using Sirenix.OdinInspector;
 using DG.Tweening;
 using Unity.Netcode;
-using Unity.Netcode.Components;
 
-public class CartMovement : NetworkBehaviour
+public class CartMovement : MonoBehaviour
 {
     #region Values
-    [ReadOnly] public NetworkVariable<float> SpeedInput = new (0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner), 
-    SteeringInput = new (0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [ReadOnly] public float SpeedInput, SteeringInput;
 
-    [ReadOnly] public float CurrentSpeed { get => walkSpeed.Value * speedFactor.Value; }
+    [ReadOnly] public float CurrentSpeed { get => walkSpeed * speedFactor; }
     [ReadOnly] public float CurrentSteerSpeed;
 
-    [ReadOnly] private NetworkVariable<float> speedFactor = new (1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner), 
-    steerFactor = new (1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [ReadOnly] private float speedFactor = 1f, steerFactor = 1f;
 
-    [SerializeField] NetworkVariable<float> walkSpeed = new (0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner), 
-    walkSteerSpeed = new (0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [SerializeField] float walkSpeed, walkSteerSpeed;
 
     public float chargeSpeedFactor, chargeSteerFactor;
     public float chargeTime, chargeCooldownTime;
@@ -33,28 +29,6 @@ public class CartMovement : NetworkBehaviour
     [HideInInspector] public Cart Cart;
     #endregion
 
-    // public override void OnReanticipate(double ab)
-    // {
-    //     //Debug.Log(ab);
-    //     var ant = transform.parent.GetComponent<AnticipatedNetworkTransform>();
-    //     var prev = ant.PreviousAnticipatedState;
-
-    //     if (ant.IsHost)
-    //         ant.Smooth(ant.AnticipatedState, ant.AuthoritativeState, 0.05f);
-    //     else 
-    //     {
-    //         // var sqDist = Vector3.SqrMagnitude(prev.Position - ant.AnticipatedState.Position);
-    //         // var sqRot = Vector3.SqrMagnitude(prev.Rotation.eulerAngles - ant.AnticipatedState.Rotation.eulerAngles);
-    //         // if (sqDist <= 0.02f || sqRot <= 0.02f)
-    //         // {
-    //         //     // This prevents small amounts of wobble from slight differences.
-    //         //     ant.AnticipateState(prev);
-    //         // }
-    //         // else 
-    //             ant.Smooth(prev, ant.AnticipatedState, 0.05f);
-    //     }
-    // }
-
     void FixedUpdate()
     {
         ApplyDirectionForce();
@@ -62,10 +36,10 @@ public class CartMovement : NetworkBehaviour
     }
 
     void ApplyDirectionForce() =>
-        Cart.Rigidbody.AddForce(transform.up * walkSpeed.Value * speedFactor.Value * (charge ? 1 : SpeedInput.Value), ForceMode2D.Force);
+        Cart.Rigidbody.AddForce(transform.up * walkSpeed * speedFactor * (charge ? 1 : SpeedInput), ForceMode2D.Force);
 
     void ApplySteering() =>
-        Cart.Rigidbody.AddTorque(SteeringInput.Value * (-walkSteerSpeed.Value) * steerFactor.Value, ForceMode2D.Force);
+        Cart.Rigidbody.AddTorque(SteeringInput * (-walkSteerSpeed) * steerFactor, ForceMode2D.Force);
 
     public void Charge()
     {
@@ -78,15 +52,15 @@ public class CartMovement : NetworkBehaviour
         charge = true;
         float halfChargeTime = chargeTime / 2f;
 
-        speedTween = DOTween.To(() => speedFactor.Value, x => speedFactor.Value = x, chargeSpeedFactor, halfChargeTime);
-        steerTween = DOTween.To(() => steerFactor.Value, x => steerFactor.Value = x, chargeSteerFactor, halfChargeTime);
+        speedTween = DOTween.To(() => speedFactor, x => speedFactor = x, chargeSpeedFactor, halfChargeTime);
+        steerTween = DOTween.To(() => steerFactor, x => steerFactor = x, chargeSteerFactor, halfChargeTime);
         
         yield return new WaitForSeconds(halfChargeTime);
         
         charge = false;
 
-        speedTween = DOTween.To(() => speedFactor.Value, x => speedFactor.Value = x, 1f, halfChargeTime);
-        steerTween = DOTween.To(() => steerFactor.Value, x => steerFactor.Value = x, 1f, halfChargeTime);
+        speedTween = DOTween.To(() => speedFactor, x => speedFactor = x, 1f, halfChargeTime);
+        steerTween = DOTween.To(() => steerFactor, x => steerFactor = x, 1f, halfChargeTime);
         
         yield return new WaitForSeconds(halfChargeTime);
         
@@ -106,8 +80,8 @@ public class CartMovement : NetworkBehaviour
         speedTween.Kill();
         steerTween.Kill();
         
-        speedFactor.Value = 1f;
-        steerFactor.Value = 1f;
+        speedFactor = 1f;
+        steerFactor = 1f;
         
         charge = false;
         chargeCooldown = false;

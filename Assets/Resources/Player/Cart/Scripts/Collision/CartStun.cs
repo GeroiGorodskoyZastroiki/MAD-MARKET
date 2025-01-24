@@ -11,10 +11,11 @@ public class CartStun : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.transform.parent)
-            if (collision.collider.transform.parent.TryGetComponent(out Cart attackingCart))
+        if (collision.collider.transform.parent && collision.collider.transform.parent.parent)
+            if (collision.collider.transform.parent.parent.TryGetComponent(out Cart attackingCart))
                 if (collision.collider.gameObject.CompareTag("Attack") && attackingCart.Movement.CurrentSpeed >= attackingCart.Attack.CriticalSpeed)
                 {
+                    Debug.Log("GotStunned");
                     Cart.Push.Push(collision.GetContact(0));
                     StartCoroutine(Stun());
                 }

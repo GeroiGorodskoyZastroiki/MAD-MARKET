@@ -636,6 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c976eb3e74d71744b5bf2086ab34e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   Cart: {fileID: 0}
 --- !u!114 &832230331207638479
 MonoBehaviour:
@@ -649,16 +650,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c451c57493cf2534c93941554fe74a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  SpeedInput:
-    m_InternalValue: 0
-  SteeringInput:
-    m_InternalValue: 0
+  SpeedInput: 0
+  SteeringInput: 0
   CurrentSteerSpeed: 0
-  walkSpeed:
-    m_InternalValue: 2000
-  walkSteerSpeed:
-    m_InternalValue: 36000
+  walkSpeed: 0
+  walkSteerSpeed: 0
   chargeSpeedFactor: 4
   chargeSteerFactor: 0.5
   chargeTime: 1.2
@@ -696,8 +692,6 @@ GameObject:
   - component: {fileID: 9167872445796668862}
   - component: {fileID: 166219440743433268}
   - component: {fileID: 8540622874206963850}
-  - component: {fileID: 1433621738888570931}
-  - component: {fileID: 2448600839999075024}
   m_Layer: 3
   m_Name: Cart
   m_TagString: Untagged
@@ -817,60 +811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16e680b46deb6247b354febd1b0234e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1433621738888570931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6893228051361947072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abfce83aadd948498d4990c645a017b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  NetworkTransformExpanded: 1
-  AuthorityMode: 0
-  TickSyncChildren: 0
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 0
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 1
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  SwitchTransformSpaceWhenParented: 0
-  Interpolate: 0
-  SlerpPosition: 0
-  StaleDataHandling: 1
---- !u!114 &2448600839999075024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6893228051361947072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  NetworkRigidbodyBaseExpanded: 0
-  UseRigidBodyForMotion: 0
-  AutoUpdateKinematicState: 1
-  AutoSetKinematicOnDespawn: 1
 --- !u!1 &7517089352086741760
 GameObject:
   m_ObjectHideFlags: 0

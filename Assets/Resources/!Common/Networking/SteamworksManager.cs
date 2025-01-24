@@ -55,11 +55,6 @@ public class SteamworksManager : MonoBehaviour
         }
     }
 
-    // void Update()
-    // {
-    //     SteamClient.RunCallbacks();
-    // }
-
     #region NetworkFlow
     public async Task StartHost(int maxMembers)
     {

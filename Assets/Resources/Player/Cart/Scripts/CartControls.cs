@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 
-public class CartControls : MonoBehaviour
+public class CartControls : NetworkBehaviour
 {
     #region References
     [HideInInspector] public Cart Cart;
@@ -10,15 +11,35 @@ public class CartControls : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         var value = context.ReadValue<Vector2>();
-        Cart.Movement.SpeedInput.Value = value.y;
-        Cart.Movement.SteeringInput.Value = Cart.Movement.SpeedInput.Value >= 0 ? value.x : -value.x;
+        
+        Move(value);
+        if (!NetworkManager.Singleton.IsHost)
+            MoveRpc(value);
+    }
+
+    [Rpc(SendTo.Server)]
+    public void MoveRpc(Vector2 value) => Move(value);
+
+    void Move(Vector2 value)
+    {
+        Cart.Movement.SpeedInput = value.y;
+        Cart.Movement.SteeringInput = Cart.Movement.SpeedInput >= 0 ? value.x : -value.x;
     }
 
     public void OnCharge(InputAction.CallbackContext context)
     {
         if (context.performed)
-            Cart.Movement.Charge();
+        {
+            Charge();
+            if (!NetworkManager.Singleton.IsHost)
+                ChargeRpc();
+        }       
     }
+
+    [Rpc(SendTo.Server)]
+    public void ChargeRpc() => Charge();
+
+    void Charge() => Cart.Movement.Charge();
 
     public void OnPickUp(InputAction.CallbackContext context)
     {

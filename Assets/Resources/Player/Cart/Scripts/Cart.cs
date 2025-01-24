@@ -26,9 +26,4 @@ public class Cart : MonoBehaviour //
         Rigidbody = GetComponent<Rigidbody2D>();
 		Rigidbody.centerOfMass = new Vector2(0, 0);
 	}
-
-    void Start() 
-    {
-        Rigidbody.isKinematic = false;
-    }
 }
